@@ -42,9 +42,10 @@
 function mouseClicked() {
   if(intro){
     introduction();
-  }
+  } else {
   speechRec = new p5.SpeechRec(lang, gotSpeech);
   speechRec.start(continuous);
+  }
 }
 
 
@@ -59,10 +60,12 @@ function mouseClicked() {
     createP(Confidence = confPercent+"%");
     
   if(confidence > conf){
-       myVoice.speak(objeto + "within" + confPercent + "percent."); 
+       createP(objeto);
+       myVoice.speak(objeto);
+       createP("within  " + confPercent + "%"); 
      } else {
        createP("Please try again - click the mouse and repeat:");
-       myVoice.speak(frase);
+       createP(objeto + "?????");
   }  //confidence
 } // gotspeech
 

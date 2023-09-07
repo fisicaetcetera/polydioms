@@ -12,7 +12,7 @@
   let hours, minutes, seconds;
   let feeling, humor;
   let intro = true;
-  let conf = 0.5// default confidence level
+  let conf = 0.7// default confidence level
   let confPercent;
   let frase; // Frase to be read by student
   let frases = ["Hello", "Bom dia", "Boa noite", "Bom apetite",

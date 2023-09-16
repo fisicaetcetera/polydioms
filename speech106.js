@@ -11,8 +11,8 @@
   let confPercent;
   let ii;
   let frase; // Frase to be read by student
-  let idiomas = ['en-US', 'de-DE', 'pt-BR', 'es-Es', 'fr-FR', 'ar-SA', 'es-ES'];
-  let vozes = ["Google US English", "Google Deutsch" , "Google portugês do Brasil", "Google español", "Google french", "Google arabic", "Google español"];
+  let idiomas = ['en-US', 'de-DE', 'pt-BR', 'ru-RU', 'fr-FR', 'ar-SA', 'es-ES'];
+  let vozes = ["Google US English", "Google deutsch" , "Google portugês do Brasil", "Google русский", "Google french", "Google arabic", "Google español"];
   function setup() {
     noCanvas();
     //  choose lang / voice
@@ -35,6 +35,14 @@
     button = createButton('Español');
     button.position(386, 0);
     button.mousePressed(Español);
+    //
+    button = createButton('Deutsch');
+    button.position(452, 0);
+    button.mousePressed(Deutsch);
+    //
+    button = createButton('Русский');
+    button.position(519, 0);
+    button.mousePressed(Русский);
     //
     myVoice = new p5.Speech('Google US English', gotVoice);
     function gotVoice(){
@@ -114,11 +122,11 @@ function العربية() {
     myVoice.setLang(lang);
     myVoice.setVoice(voz);
     console.log(voz);
-    createP("إصدار: .٩١٠٠٩٠٠");
+    //createP("إصدار: .٩١٠٠٩٠٠");
 }
   
     function Español() {
-    createP("Español");
+    createP("Español - 09141154");
     ii = 6;
     lang = idiomas[ii];
     speechRec = new p5.SpeechRec(lang, gotSpeech);
@@ -134,8 +142,42 @@ function العربية() {
     createP(" Por favor di algo:");
 }
 
-
-
+  
+    function Deutsch() {
+    createP("Deutsch");
+    ii = 1;
+    lang = idiomas[ii];
+    //speechRec = new p5.SpeechRec(lang, gotSpeech);
+    speechRec = new p5.SpeechRec(lang, gotSpeech);
+    speechRec.start(continuous);
+    console.log(ii, idiomas[ii]);
+    console.log(lang);
+    voz = vozes[ii];
+    myVoice = new p5.Speech();
+    myVoice.setLang(lang);
+    myVoice.setVoice(voz);
+    console.log(voz);
+    //createP("Version: 09102018");
+    createP(" Bitte, etwas sagen:");
+}
+ 
+    function Русский() {
+    createP("Русский");
+    ii = 3;
+    lang = idiomas[ii];
+    //speechRec = new p5.SpeechRec(lang, gotSpeech);
+    speechRec = new p5.SpeechRec(lang, gotSpeech);
+    speechRec.start(continuous);
+    console.log(ii, idiomas[ii]);
+    console.log(lang);
+    voz = vozes[ii];
+    myVoice = new p5.Speech();
+    myVoice.setLang(lang);
+    myVoice.setVoice(voz);
+    console.log(voz);
+    //createP("Version: 09102018");
+    createP("Пожалуйста, скажи что-нибудь:");
+}
   function gotSpeech() {
     console.log(speechRec);
     objeto = speechRec.resultString;
@@ -151,11 +193,9 @@ function العربية() {
        myVoice.speak(objeto);
        createP("(" + confPercent + "%)"); 
      } else {
-     if(ii=5){
+     if(ii==5){
          createP("من فضلك قل شيئا:");
-     }  else {    
-       createP("Tente novamente...:");
-     }
+     }  
       createP(objeto + "?????");
   }  //confidence
 } // gotspeech

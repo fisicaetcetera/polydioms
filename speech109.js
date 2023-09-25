@@ -4,7 +4,7 @@
   let lang;
   let voz;
   let speechRec;
-  let continuous = false;
+  let continuous = true;
   let myVoice;
   let reply;
   let conf = 70;// default confidence level
@@ -12,19 +12,20 @@
   let ii;
   let frase; // Frase to be read by student
   let idiomas = ['en-US', 'de-DE', 'pt-BR', 'ru-RU', 'fr-FR', 'ar-SA', 'es-ES', 'it-IT', 'he-IL'];
-  let vozes = ["Google US English", "Google deutsch" , "Google portugês do Brasil", "Google русский", "Google french", "Google arabic", "Google español", "Google italiano", "Google hebrew"];
+  let vozes = ["Google US English", "Google deutsch" , "Google português do Brasil", "Google русский", "Google french", "Google arabic", "Google español", "Google italiano", "Google hebrew"];
   let texto = '', texto1 ='';
+  let texto2 = '';
+
   //
   //
   function setup() {
-  createCanvas(900,640);
+  createCanvas(1290,600);
   background('grey');
- 
-  
+  textSize(40);  
     //  choose lang / voice
     button = createButton('Português');
     button.position(width/13, 10);
-    button.mousePressed(Portugues);
+    button.mousePressed(Português);
     //
     button = createButton('English');
     button.position(2*width/13 + 12, 10);
@@ -67,12 +68,15 @@
 function draw(){
 background('lightGrey');
 textAlign(LEFT);
+  textSize(40);
+  textWrap(WORD);
+  text(texto, width/13, 2*height/10, 700,200);
   textSize(20);
-  //fill('blue');
-  text(texto, width/13, 2*height/10);
-  text(texto1, width/13, 2.5*height/10);
+  text(texto1, width/13, 3*height/10 + 200);
+  text(texto2, width/13, 3*height/10 + 240);
+  texto2 = '';
 } // draw
-function Portugues() {
+function Português() {
     //createP("Português");
     //
     texto = 'Por favor, diga algo';
@@ -267,6 +271,7 @@ function العربية() {
 }
 
   function gotSpeech() {
+    //textStyle(BOLD);
     console.log(speechRec);
     objeto = speechRec.resultString;
     console.log("Dentro de gotSpeech",objeto);
@@ -275,30 +280,27 @@ function العربية() {
     console.log(confPercent + "%");
     //createP("Frase = " + objeto  );
     //text(objeto, width/10,5*height/10);
-    texto = objeto;
+    Responde(); // analisa texto
     if(confPercent > conf){
-       texto1 = ': ) ' + confPercent + '%';
-    } else {
-       texto1 = ': ( ' + confPercent + '%';
-           }
-    //createP(Confidence = confPercent+"%");   
-    text(texto, width/10, 7*height/10);
-    text(texto1, width/10, 11*height/10);
-    if(confPercent > conf){
-       //createP(objeto);
-       myVoice.speak(objeto);
+       texto1 = ': ) '+ '   ' + confPercent + '%';
+       texto2 = '';
+       myVoice.speak(texto);
      } else {
-     if(ii==5){
-         //createP("من فضلك قل شيئا:");
-     }  
-      createP(objeto + "?????");
-  }  //confidence
+          texto1 = ': ( ' + '   ' + confPercent + '%';
+          texto2 = texto + " ?????";
+          createP(texto2);
+      }
 } // gotspeech
 
-function greet() {
-  const palavra = input.value();
-  greeting.html('Você digitou: ' + palavra + '!');
-  input.value('');
+  function Responde(){
+      if(objeto == "muito bem"){
+      myVoice.speak('Obrigada!' + 'Favor continuar!');
+      texto = 'Diga algo mais...';
+      texto1 = '';
+      português();
+    } else {
+      texto = objeto;
+    }
 }
   //
 

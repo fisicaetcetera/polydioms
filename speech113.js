@@ -298,7 +298,7 @@ function العربية() {
     //
  
     function Magyar() {
-    texto = "Kérlek, mondj valamit";
+    texto = "";
     texto1 ='';
     ii = 9;
     lang = idiomas[ii];
@@ -308,11 +308,11 @@ function العربية() {
     console.log(lang);
     myVoice.setRate(1.0);
     myVoice.setPitch(random(0.7, 1.3));
-    voz = vozes[ii];
-    myVoice = new p5.Speech();
-    myVoice.setLang(lang);
-    myVoice.setVoice(voz);
-    if(fala){myVoice.speak(texto); }
+    //voz = vozes[ii];
+    //myVoice = new p5.Speech();
+    //myVoice.setLang(lang);
+    //myVoice.setVoice(voz);
+    //if(fala){myVoice.speak(texto); }
     console.log(voz);
 }
     //

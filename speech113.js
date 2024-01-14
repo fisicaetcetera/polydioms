@@ -318,8 +318,8 @@ function العربية() {
     //
  
     function 中文() {
-    //texto = "请说句话";
-    texto = '我叫美琳';
+    texto = "请说句话";
+    //texto = '我叫美琳';
     texto1 ='MêiLin';
     ii = 10;
     lang = idiomas[ii];

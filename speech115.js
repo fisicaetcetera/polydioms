@@ -17,7 +17,7 @@
   var paragrafo;
   let frase; // Frase to be read by student
   let idiomas = ['en-US', 'de-DE', 'pt-BR', 'ru-RU', 'fr-FR', 'ar-SA', 'es-ES', 'it-IT', 'he-IL', 'hu-HU', 'zh-CN'];
-  let vozes = ["Google US English", "Google deutsch" , "Google português do Brasil", "Google русский", "Google french", "Google arabic", "Google español", "Google italiano", "Google hebrew", "Google magyar", "Google 普通话（中国大陆)"];
+  let vozes = ["Google US English", "Google deutsch" , "Google português do Brasil", "Google русский", "Google français", "Google arabic", "Google español", "Google italiano", "Google hebrew", "Google magyar", "Google 普通话（中国大陆)"];
   let texto = '', texto1 ='';
   let texto2 = '';
   let fala = true;

@@ -1,4 +1,4 @@
-// speech113.js:
+// speech115.js:
 // Including Chinese  
 //Google 普通话（中国大陆）, 
 // v112 Speech Recognition with p5.speech
@@ -171,7 +171,7 @@ function Français() {
     speechRec = new p5.SpeechRec(lang, gotSpeech);
     speechRec.start(continuous);
     console.log(ii, idiomas[ii]);
-    console.log(lang);t
+    console.log(lang);
     myVoice.setRate(1.0);
     myVoice.setPitch(random(0.7, 1.3));
     voz = vozes[ii];

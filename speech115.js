@@ -1,4 +1,4 @@
-// speech115.js:
+// speech113.js:
 // Including Chinese  
 //Google 普通话（中国大陆）, 
 // v112 Speech Recognition with p5.speech
@@ -29,6 +29,7 @@
   let dicasPinyin = [ 'Zhōngwén', 'nǐ hǎo', 'nǐ hǎo ma?', 'Wǒ de míngzì shì...', 'Wǒ shì...', 'Wǒ shì yī míng lǎoshī', 'wǒ shì yī míng lǎoshī', 'wǒ shì bāxī rén', 'wǒ shì bāxī rén', 'bāxī rén', 'bāxī rén', 'wǒ xuéxí zhōngwén', 'wǒmen xué zhōngwén', 'nǐ xué zhōngwén', 'wǒ gēgē xué zhōngwén', 'wǒ bàba xué zhōngwén', 'wǒ dìdì xué zhōngwén', 'wǒ mèimei yě xué zhōngwén', 'Wǒ shuōhuà', 'nǐ shuōhuà', 'tā shuōhuà', 'wǒmen shuōhuà', 'nǐ shuōhuà', 'tāmen shuōhuà'];
   let dicasChinês = ['中文', '你好', '你好吗？', '我的名字是...', '我是...', '我是一名老师', '我是一名老师', '我是巴西人', '我是巴西人', '巴西人', '巴西人', '我学习中文', '我们学中文', '你学中文', '我哥哥学中文', '我爸爸学中文', '我弟弟学中文', '我妹妹也学中文', '我说话', '你说话', '他说话', '我们说话', '你说话', '他们说话'];
   let dicasPortuguês = ['idioma chinês', 'olá', 'como vai?', 'meu nome é ...', ' Eu sou ...', 'Eu sou professor', 'Eu sou professora', 'Eu sou brasileiro', 'Eu sou brasileira', 'Brasileiro', 'Brasileira', 'Eu estudo Chinês', 'Nós estudamos Chinês', 'Vocês aprendem Chinês', 'Meu irmão mais velho estuda Chinês','Meu papai estuda Chinês','Meu irmão mais novo estuda Chinês','Minha irmã mais nova também','Eu falo','você fala','ele fala','nós conversamos','você fala','eles falam'];
+  let dicasRusso = ['Привет!',' Как дела?','Меня зовут Путин','Как тебя зовут?','Доброе утро','Добрый день','Добрый вечер','Увидимся позже','Пока','Это моя жена','Это моя дочь','Мой сын','Мой отец','Моя мама','Мой брат','Моя сестра','Вы говорите по-русски?','Французский','Португальский','Английский','Китайский','Японский','Спасибо','Пожалуйста','Пожалуйста','Я бразилец','Он бразилец','Она бразильянка','Мы бразильцы','Вы русские?','Я','Вы','Он','Она','Мы','Они','Они'];
 let randomChoice;
 let dicasTotal;
 let ii;
@@ -108,6 +109,9 @@ textAlign(LEFT);
     text(sss1, width/13, height-55); 
     let sss2 = qualDica2[randomChoice];
     text(sss2, width/13, height-30);
+    } else if (ii == 3) {
+       let sss3 = qualDica[randomChoice];
+       text(sss3, width/13, height-80);
     }
 
 } // draw
@@ -133,7 +137,6 @@ function Português() {
     if(fala){myVoice.speak(texto); }
     console.log(voz);
     console.log("Fala = ", fala);
-    h5.html('Português');
 }
 
   
@@ -249,15 +252,13 @@ function العربية() {
     myVoice.setVoice(voz);
     if(fala){myVoice.speak(texto); }
     console.log(voz);
-    ////createP("Version: 09102018");
-    //createP(" Bitte, etwas sagen:");
 }
- 
     function Русский() {
     //createP("Русский");
     texto = " Пожалуйста, скажи что-нибудь:";
-    texto1 ='';
+    texto1 ='Motya (Mãtiá)';
     ii = 3;
+    qualDica = dicasRusso;
     lang = idiomas[ii];
     //speechRec = new p5.SpeechRec(lang, gotSpeech);
     speechRec = new p5.SpeechRec(lang, gotSpeech);
@@ -317,7 +318,7 @@ function العربية() {
  
     function Magyar() {
     texto = "Kérlek mondj valamit";
-    texto1 ='Zófia';
+    texto1 ='Zsófia';
     ii = 9;
     lang = idiomas[ii];
     speechRec = new p5.SpeechRec(lang, gotSpeech);

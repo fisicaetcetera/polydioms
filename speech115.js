@@ -116,6 +116,7 @@ textAlign(LEFT);
 
 } // draw
 function Português() {
+    name = 'Gabriela';
     if(comando){
           texto = 'Sim?';
        } else {
@@ -141,7 +142,7 @@ function Português() {
 
   
 function English() {
-        //
+    name = 'Cassandra';
     texto = 'Please,say something';
     texto1 ='Cassandra';
     fill('blue');
@@ -165,7 +166,7 @@ function English() {
 
   
 function Français() {
-    //createP("Français");
+    name = 'Marie';
     texto = " S’il te plaît, dis quelque chose:";
     texto1 ='Marie';
     fill('black');
@@ -189,7 +190,7 @@ function Français() {
 
   
 function العربية() {
-    //createP('العربية');
+    name = 'Sarah';
     fill('black');
     texto = " أرجوك قل شيئا";
     texto1 ='Sarah(سارة)';
@@ -210,9 +211,9 @@ function العربية() {
 }
   
     function Español() {
-    //createP("Español - 09141154");
+    name = 'Gaston';
     texto = " Por favor di algo:";
-    texto1 ='';
+    texto1 ='Gaston';
     ii = 6;
     lang = idiomas[ii];
     speechRec = new p5.SpeechRec(lang, gotSpeech);
@@ -233,7 +234,7 @@ function العربية() {
 
   
     function Deutsch() {
-    //createP("Deutsch");
+    name  =  'Gisela';
     fill('black');
     texto = " Bitte, etwas sagen:";
     texto1 ='Gisela';
@@ -254,7 +255,7 @@ function العربية() {
     console.log(voz);
 }
     function Русский() {
-    //createP("Русский");
+    name = 'Motya';
     texto = " Пожалуйста, скажи что-нибудь:";
     texto1 ='Motya (Mãtiá)';
     ii = 3;
@@ -276,6 +277,7 @@ function العربية() {
 }
 
     function Italiano() {
+    name = 'Gianne';
     texto = "Per favore dì qualcosa";
     texto1 ='';
     ii = 7;
@@ -297,6 +299,7 @@ function العربية() {
 // ''//
  
     function עברית() {
+    name = 'Tamar, תמר'
     texto = "בבקשה תגיד משהו";
     texto1 ='';
     ii = 8;
@@ -317,6 +320,7 @@ function العربية() {
     //
  
     function Magyar() {
+    name = 'Zsófia';
     texto = "Kérlek mondj valamit";
     texto1 ='Zsófia';
     ii = 9;
@@ -333,8 +337,10 @@ function العربية() {
     //
  
     function 中文() {
+    name = '北海';
     fill('black');
     texto = "请说句话";
+    name = '北海';
     texto1 ='(北海  = Běihǎi)';
     qualDica = dicasChinês;
     qualDica1 = dicasPinyin;
@@ -362,6 +368,7 @@ function العربية() {
     console.log('random choice = ' + randomChoice);
     console.log(speechRec);
     objeto = speechRec.resultString;
+    objeto = objeto.toLowerCase();
     // Separa objeto em palavras
     let palavras = split(objeto, ' ');
     comprimento = palavras.filter(word => word !== '').length;
@@ -389,24 +396,24 @@ function العربية() {
      } 
 } // gotspeech
   function Responde(){
-      if(objeto == "muito bem"){
+      if (objeto == "muito bem"){
       myVoice.speak('Obrigada!' + 'Vamos continuar?');
       Português();
     } else {
       texto = objeto;
     }
-    if (objeto == "Gabriela"){
+    if (objeto == "gabriela"){
      texto1 = "";
      comando = true;
      texto = "Posso ajudar?";
      Português();
     }
-     if (objeto == "Marie"){
+     if (objeto == "marie"){
      texto1 = "";
      texto = "Oui?";
     }
     
-        if (objeto == "go to Portuguese"){
+        if (objeto == "go to portuguese"){
        texto1 = "";
        texto = "OK, switching to Portuguese!";
        Português();
@@ -425,7 +432,17 @@ function العربية() {
         texto = "我叫北海";     
       texto1 = 'Wǒ de míngzì jiào Běihǎi';
       console.log('dentro do if;;;;;');
-      }      
+      }   
+            if(texto == "what's your name"){
+        texto = "My name is " + ' ' + name;     
+      //texto1 = 'Wǒ de míngzì jiào Běihǎi';
+      console.log('dentro do if;;;;;');
+      }    
+                 if(texto == "what is your name"){
+        texto = "My name is " + ' ' + name;     
+      //texto1 = 'Wǒ de míngzì jiào Běihǎi';
+      console.log('dentro do if;;;;;');
+      }    
  } //Function responde()
   //
 function Comandos(){

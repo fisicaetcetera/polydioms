@@ -129,7 +129,7 @@ function Português() {
     speechRec = new p5.SpeechRec(lang, gotSpeech);
     speechRec.start(continuous);
     console.log(ii, idiomas[ii]);
-    console.log(lang);
+    console.log(lang); createP(lang);
     voz = vozes[ii];
     myVoice.setLang(lang);
     myVoice.setRate(1.2);
@@ -151,7 +151,7 @@ function English() {
     speechRec = new p5.SpeechRec(lang, gotSpeech);
     speechRec.start(continuous);
     console.log(ii, idiomas[ii]);
-    console.log(lang);
+    console.log(lang); createP(lang);
     voz = vozes[ii];
     myVoice = new p5.Speech();
     myVoice.setLang(lang);
@@ -175,7 +175,7 @@ function Français() {
     speechRec = new p5.SpeechRec(lang, gotSpeech);
     speechRec.start(continuous);
     console.log(ii, idiomas[ii]);
-    console.log(lang);
+    console.log(lang); createP(lang);
     myVoice.setRate(1.0);
     myVoice.setPitch(random(0.7, 1.3));
     voz = vozes[ii];
@@ -200,7 +200,7 @@ function العربية() {
     speechRec = new p5.SpeechRec(lang, gotSpeech);
     speechRec.start(continuous);
     console.log(ii, idiomas[ii]);
-    console.log(lang);
+    console.log(lang); createP(lang);
     voz = vozes[ii];
     myVoice = new p5.Speech();
     myVoice.setLang(lang);
@@ -219,7 +219,7 @@ function العربية() {
     speechRec = new p5.SpeechRec(lang, gotSpeech);
     speechRec.start(continuous);
     console.log(ii, idiomas[ii]);
-    console.log(lang);
+    console.log(lang); createP(lang);
     myVoice.setRate(1.2);
     myVoice.setPitch(random(0.7, 1.3));
     voz = vozes[ii];
@@ -244,7 +244,7 @@ function العربية() {
     speechRec = new p5.SpeechRec(lang, gotSpeech);
     speechRec.start(continuous);
     console.log(ii, idiomas[ii]);
-    console.log(lang);
+    console.log(lang); createP(lang);
     myVoice.setRate(1.0);
     myVoice.setPitch(random(0.7, 1.3));
     voz = vozes[ii];
@@ -265,7 +265,7 @@ function العربية() {
     speechRec = new p5.SpeechRec(lang, gotSpeech);
     speechRec.start(continuous);
     console.log(ii, idiomas[ii]);
-    console.log(lang);
+    console.log(lang); createP(lang);
     myVoice.setRate(0.8);
     myVoice.setPitch(random(0.7, 1.3));
     voz = vozes[ii];
@@ -285,7 +285,7 @@ function العربية() {
     speechRec = new p5.SpeechRec(lang, gotSpeech);
     speechRec.start(continuous);
     console.log(ii, idiomas[ii]);
-    console.log(lang);
+    console.log(lang); createP(lang);
     myVoice.setRate(1.0);
     myVoice.setPitch(random(0.7, 1.3));
     voz = vozes[ii];
@@ -307,7 +307,7 @@ function العربية() {
     speechRec = new p5.SpeechRec(lang, gotSpeech);
     speechRec.start(continuous);
     console.log(ii, idiomas[ii]);
-    console.log(lang);
+    console.log(lang); createP(lang);
     myVoice.setRate(1.0);
     myVoice.setPitch(random(0.7, 1.3));
     voz = vozes[ii];
@@ -328,7 +328,7 @@ function العربية() {
     speechRec = new p5.SpeechRec(lang, gotSpeech);
     speechRec.start(continuous);
     console.log(ii, idiomas[ii]);
-    console.log(lang);
+    console.log(lang); createP(lang);
     myVoice.setRate(1.0);
     myVoice.setPitch(random(0.7, 1.3));
 
@@ -350,7 +350,7 @@ function العربية() {
     speechRec = new p5.SpeechRec(lang, gotSpeech);
     speechRec.start(continuous);
     console.log(ii, idiomas[ii]);
-    console.log(lang);
+    console.log(lang); createP(lang);
     myVoice.setRate(0.05);
     myVoice.setPitch(random(0.7, 1.3));
     voz = vozes[ii];
@@ -381,6 +381,7 @@ function العربية() {
     confidence = speechRec.resultConfidence;
     confPercent = floor(confidence * 100);
     console.log(confPercent + "%");
+    createP(objeto +'     '+ confPercent +'%');
     randomChoice = int(random(dicasTotal));
     console.log('randomChoice = ', randomChoice);
 
@@ -435,12 +436,11 @@ function العربية() {
       }   
             if(texto == "what's your name"){
         texto = "My name is " + ' ' + name;     
-      //texto1 = 'Wǒ de míngzì jiào Běihǎi';
       console.log('dentro do if;;;;;');
       }    
                  if(texto == "what is your name"){
-        texto = "My name is " + ' ' + name;     
-      //texto1 = 'Wǒ de míngzì jiào Běihǎi';
+        texto = "My name is " + ' ' + name; 
+        createP("My name is " + ' ' + name);    
       console.log('dentro do if;;;;;');
       }    
  } //Function responde()

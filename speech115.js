@@ -35,54 +35,54 @@ let dicasTotal;
 let ii;
   //
   function setup() {
-  createCanvas(1290,600);
+  createCanvas(650,500);
   background('grey');
     dicasTotal = dicasPortuguês.length; 
     randomChoice = int(random(dicasTotal));
     console.log(dicasTotal, randomChoice);
     //  choose lang / voice
     button = createButton('Português');
-    button.position(width/13, 10);
+    button.position(2*width/13, 10);
     button.mousePressed(Português);
     //
     button = createButton('English');
-    button.position(2*width/13 + 12, 10);
+    button.position(4*width/13 + 12, 10);
     button.mousePressed(English);
     //
     button = createButton('Français');
-    button.position(3*width/13 + 6, 10);
+    button.position(6*width/13 + 6, 10);
     button.mousePressed(Français);
     //
     button = createButton('العربية');
-    button.position(4*width/13 + 8, 10);
+    button.position(8*width/13 + 8, 10);
     button.mousePressed(العربية);
     //
     button = createButton('Español');
-    button.position(5*width/13-5, 10);
+    button.position(10*width/13-5, 10);
     button.mousePressed(Español);
     //
     button = createButton('Deutsch');
-    button.position(width/13, 33);
+    button.position(2*width/13, 33);
     button.mousePressed(Deutsch);
     //
     button = createButton('Русский');
-    button.position(2*width/13 + 12, 33);
+    button.position(4*width/13 + 12, 33);
     button.mousePressed(Русский);
      //
     button = createButton('Italiano');
-    button.position(3*width/13 + 6, 33);
+    button.position(6*width/13 + 6, 33);
     button.mousePressed(Italiano);
     //
     button = createButton('עברית');
-    button.position(4*width/13 + 8, 36);
+    button.position(8*width/13 + 8, 36);
     button.mousePressed(עברית);
     //
     button = createButton('Magyar');
-    button.position(5*width/13-5, 33);
+    button.position(10*width/13-5, 33);
     button.mousePressed(Magyar);
     //
     button = createButton('中文');
-    button.position(width/13, 56);
+    button.position(2*width/13, 56);
     button.mousePressed(中文);
     //
     myVoice = new p5.Speech('Google US English', gotVoice);
